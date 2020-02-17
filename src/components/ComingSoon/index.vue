@@ -1,20 +1,24 @@
 <template>
 <div class="movie_body">
-				<ul>
-					<li v-for="item in comingList" :key="item.id">
-						<div class="pic_show"><img :src="item.img|setWH('120.180')"></div>
-						<div class="info_list">
-							<h2>{{item.nm}}</h2> <img v-if="item.version" src="@/assets/maxs.png" alt="">
-							<p><span class="person">{{item.wish}}</span> 人想看</p>
-							<p>主演: {{item.star}}</p>
-							<p>{{item.rt}}</p>
-						</div>
-						<div class="btn_pre">
-							预售
-						</div>
-					</li>
-				</ul>
-			</div>
+    <Loading v-if="isLoading"></Loading>
+
+	<Scroller v-else>
+		<ul>
+			<li v-for="item in comingList" :key="item.id">
+				<div class="pic_show"><img :src="item.img|setWH('120.180')"></div>
+				<div class="info_list">
+					<h2>{{item.nm}}</h2> <img v-if="item.version" src="@/assets/maxs.png" alt="">
+					<p><span class="person">{{item.wish}}</span> 人想看</p>
+					<p>主演: {{item.star}}</p>
+					<p>{{item.rt}}</p>
+				</div>
+				<div class="btn_pre">
+					预售
+				</div>
+			</li>
+		</ul>
+	</Scroller>
+</div>
 </template>
 
 <script>
@@ -22,7 +26,8 @@ export default {
 	name:'ComingSoon',
 	data(){
 		return {
-			comingList:[]
+			comingList:[],
+			isLoading:true
 		}
 	},
 	mounted(){
@@ -31,8 +36,8 @@ export default {
 			// console.log(res.data.coming);
 			
 			this.comingList = res.data.coming;
-			console.log(this.comingList );
-			
+			// console.log(this.comingList );
+			this.isLoading = false;
 			
 		});
 	}
