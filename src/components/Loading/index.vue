@@ -1,14 +1,14 @@
 <template>
-  <div class="loader"></div>
+    <div class="loader"></div>
 </template>
 
 <script>
 export default {
-    name:'Loading'
+    name : 'Loading'
 }
 </script>
 
-<style scoped> 
+<style scoped>
 .loader {
   position: relative;
   width: 2.5em;
@@ -16,7 +16,7 @@ export default {
   transform: rotate(165deg);
 }
 .loader:before, .loader:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -80,5 +80,5 @@ body {
   top: calc(50% - 1.25em);
   left: calc(50% - 1.25em);
 }
- 
+
 </style>

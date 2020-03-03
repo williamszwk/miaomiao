@@ -1,19 +1,16 @@
 # miaomiao
 
-## Project setup
+
+
+## 项目安装包
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 编译运行
 ```
 npm run serve
 ```
+### 后端API可能有部分失效
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
